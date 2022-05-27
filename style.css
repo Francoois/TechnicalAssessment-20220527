@@ -32,17 +32,23 @@ h1{
 }
 
 @font-face {
+    font-family: 'local-Roboto';
+    src: url("Resources/Fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: 'local-Roboto';
+    src: url("Resources/Fonts/Roboto-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
     font-family: 'local-Roboto-thin';
     src: url("Resources/Fonts/Roboto-Thin.ttf");
 }
 @font-face {
-    font-family: 'local-Roboto-bold';
-    src: url("Resources/Fonts/Roboto-Bold.ttf");
+    font-family: 'local-Roboto-Light';
+    src: url("Resources/Fonts/Roboto-Light.ttf");
 }
-@font-face {
-    font-family: 'local-Roboto-Regular';
-    src: url("Resources/Fonts/Roboto-Regular.ttf");
-}
+
 
 #main{
     background-image: url("Resources/Background.png");
@@ -67,18 +73,112 @@ nav{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    align-items: center;
 }
 nav>ul {
     display: flex;
     flex-flow: row nowrap;
 }
 #pages{
+    width: 100%;
     justify-content: space-between;
+    gap: 1.5%;
 }
 #sub-pages{
-    justify-content: center;
-    gap: 1%;
+    width: 50%;
+    justify-content: space-between;
+    gap: 2%;
 }
+#sub-pages li.selected{
+    flex-grow: 2;
+}
+#pages li.selected,
+#sub-pages li.selected{
+    background-color: #FFF8;
+    color: black;
+    font-family: local-Roboto;
+    font-weight: bold;
+}
+
+#pages li,
+#sub-pages li{
+    background-color: #0008;
+    /*color: white;*/
+    font-family: local-Roboto-Light;
+    flex-grow: 1;
+
+    --c: white;
+    color: var(--c);
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    /*margin: 1em;*/
+}
+
+#pages li span,
+#sub-pages li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+#pages li:hover,
+#sub-pages li:hover{
+    color: black;
+}
+
+#pages li:hover span,
+#sub-pages li:hover span{
+    transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+    --n: 4;
+}
+
+#pages li{
+    padding: .2em 0 .2em 0;
+    text-align: center;
+    /*width: 24%;*/
+}
+#sub-pages li{
+    font-size: .8em;
+    padding: .2em 0 .2em 0;
+    text-align: center;
+    /*width: 12%;*/
+}
+
+/*#pages li:hover,*/
+/*#sub-pages li:hover{*/
+/*    !*background-color: aqua;*!*/
+/*}*/
+
+/*
+        Page List
+ */
 
 #card-list{
     height: 86%;
@@ -93,44 +193,51 @@ nav>ul {
 
 .card {
     height: 47%;
-    border: solid 1px white;
+    background-color: #0009;
+    /*border: solid 1px white;*/
     display: flex;
     flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
     gap: .5em;
-    /*width: 32%;*/
-    /*width: min-content;*/
-    flex-basis: 31%;
+
+    flex-basis: 30%;
     flex-grow: 1;
+
+    padding: .4em;
 }
+
 .card:first-child{
     background-color: #FFF4;
-    /*width: 65%;*/
     flex-basis: 65%;
     flex-grow: 2;
-    /*flex-shrink: 2;*/
 }
 .card:first-child h1{
     background-color: rgb(230,230,230,.8);
-    padding: .15em;
     color: black;
     font-size: 2em;
 }
 .card h1{
     background-color: #000D;
-    padding: .15em;
+    padding: .4em;
     color: white;
     font-size: 1.2em;
+    height: 20%;
+}
+.card h1 em{
+    font-style: normal;
+    font-family: local-Roboto;
+    font-weight: bold;
 }
 .card div{
+    height: 68%;
     background-position: top;
     background-repeat: no-repeat;
-    /*background-size: 100% auto;*/
-    background-size: contain;
+    background-size: cover;
     flex-grow: 1;
 
     display: flex;
     flex-flow: column-reverse nowrap;
-    /*justify-content: flex-end;*/
     align-items: flex-end;
 }
 
@@ -140,13 +247,12 @@ nav>ul {
 }
 
 .card div article{
-    /*height: 50%;*/
-    /*width: 40%;*/
     background-color: #0003;
 
-    font-family: local-Roboto-Regular;
+    font-family: local-Roboto;
     color: white;
     font-size: .8em;
+    z-index: 2;
 }
 
 /** {*/
