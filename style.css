@@ -191,7 +191,7 @@ nav ul li span:nth-child(4) {
     justify-content: flex-start;
     align-items: flex-start;
     align-content: space-between;
-    /*row-gap: 2%;*/
+    row-gap: 5%;
     column-gap: 2%;
 }
 
@@ -213,7 +213,7 @@ nav ul li span:nth-child(4) {
 
 .card.selected{
     background-color: var(--light-grey);
-    flex-basis: 65%;
+    flex-basis: 63%;
     flex-grow: 2;
 }
 .card.selected h1{
