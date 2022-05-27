@@ -80,10 +80,15 @@ nav>ul {
     gap: 1%;
 }
 
-#menu-area{
+#card-list{
     height: 86%;
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: space-between;
+    /*row-gap: 2%;*/
+    column-gap: 2%;
 }
 
 .card {
@@ -92,42 +97,56 @@ nav>ul {
     display: flex;
     flex-flow: column nowrap;
     gap: .5em;
+    /*width: 32%;*/
+    /*width: min-content;*/
+    flex-basis: 31%;
+    flex-grow: 1;
 }
-.card:nth-child(1){
+.card:first-child{
     background-color: #FFF4;
+    /*width: 65%;*/
+    flex-basis: 65%;
+    flex-grow: 2;
+    /*flex-shrink: 2;*/
 }
-.card:nth-child(1) h1{
+.card:first-child h1{
     background-color: rgb(230,230,230,.8);
     padding: .15em;
+    color: black;
+    font-size: 2em;
 }
 .card h1{
     background-color: #000D;
     padding: .15em;
     color: white;
+    font-size: 1.2em;
 }
 .card div{
-    background-image: url("Resources/Tile_image_1.png");
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
+    /*background-size: 100% auto;*/
+    background-size: contain;
     flex-grow: 1;
 
     display: flex;
-    flex-flow: row-reverse nowrap;
+    flex-flow: column-reverse nowrap;
     /*justify-content: flex-end;*/
     align-items: flex-end;
 }
 
+.card:first-child div article{
+    width: 50%;
+    padding-right: 5%;
+}
+
 .card div article{
-    height: 50%;
-    width: 40%;
+    /*height: 50%;*/
+    /*width: 40%;*/
     background-color: #0003;
 
     font-family: local-Roboto-Regular;
     color: white;
     font-size: .8em;
-
-    padding-right: 5%;
-
 }
 
 /** {*/
