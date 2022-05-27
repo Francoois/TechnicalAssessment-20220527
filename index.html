@@ -100,10 +100,20 @@
 </div>
 <script>
     'use strict';
-    // let cards = document.getElementsByClassName("card"); //
-    // for(let i=1;i<cards.length;i++){
-    //cards[0].firstElementChild.firstChild.
-    // }
+
+    setOnClick(document.getElementById('pages').children);
+    setOnClick(document.getElementById('sub-pages').children);
+
+    function setOnClick(clickables){
+        for(let clickable of clickables){
+            clickable.onclick= toggleSelect;//.bind(clickable);
+        }
+    }
+
+    function toggleSelect(){
+        this.classList.toggle("selected");
+        console.log("Toggle"+JSON.stringify(this));
+    }
 </script>
 </body>
 </html>
