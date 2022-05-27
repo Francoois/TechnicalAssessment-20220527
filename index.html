@@ -115,22 +115,24 @@
     /**
      * Buttons toggling
      */
-    setOnClick(document.getElementById('pages').children);
-    setOnClick(document.getElementById('sub-pages').children);
-    function setOnClick(clickables){
-        function toggleSelect(){
-            this.classList.toggle("selected");
-            console.log("Toggle"+JSON.stringify(this));
-        }
-        for(let clickable of clickables){
-            clickable.onclick= toggleSelect;//.bind(clickable);
+    setOnClick(document.getElementById('pages').children,toggleSelect);
+    setOnClick(document.getElementById('sub-pages').children,toggleSelect);
+    function setOnClick(clickableCollection, onClickFunction){
+        for(let clickable of clickableCollection){
+            clickable.onclick=onClickFunction;
         }
     }
 
     /**
-     * Cards toggling
+     * Cards click
      */
+    setOnClick(document.getElementsByClassName('card'),toggleSelect);
 
+
+    function toggleSelect(){
+        this.classList.toggle("selected");
+        console.log("Toggle"+JSON.stringify(this));
+    }
 
 </script>
 </body>
