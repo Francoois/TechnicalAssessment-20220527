@@ -19,6 +19,31 @@ p{
     margin: 0;
 }
 
+h1{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: normal;
+    font-family: "local-Roboto-thin";
+    
+}
+
+@font-face {
+    font-family: 'local-Roboto-thin';
+    src: url("Resources/Fonts/Roboto-Thin.ttf");
+}
+@font-face {
+    font-family: 'local-Roboto-bold';
+    src: url("Resources/Fonts/Roboto-Bold.ttf");
+}
+@font-face {
+    font-family: 'local-Roboto-Regular';
+    src: url("Resources/Fonts/Roboto-Regular.ttf");
+}
+
 #main{
     background-image: url("Resources/Background.png");
     background-position: center;
