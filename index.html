@@ -21,7 +21,9 @@
     <link rel="stylesheet" href="style.css?v=1.0">
 
 </head>
-<body>
+<body class="loading">
+
+<div id="loader"></div>
 
 <div id="main">
 
@@ -100,6 +102,12 @@
 </div>
 <script>
     'use strict';
+
+    setTimeout(()=>{
+        document.getElementsByClassName("loading")[0].classList.toggle("loading");
+        document.getElementById("loader").style.display="none";
+        document.getElementById("main").style.display="flex";
+    },3000);
 
     setOnClick(document.getElementById('pages').children);
     setOnClick(document.getElementById('sub-pages').children);
