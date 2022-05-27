@@ -68,7 +68,7 @@ html{
 
 #content{
     width: 83vw;
-    height: 80vh;
+    height: 82vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -197,9 +197,9 @@ nav ul li span:nth-child(4) {
 }
 
 .card {
-    height: 47%;
+    height: 45%;
     background-color: #0009;
-    /*border: solid 1px white;*/
+    border: 1px white;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
