@@ -60,6 +60,7 @@ html{
     background-image: url("Resources/Background.png");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -276,6 +277,7 @@ nav ul li span:nth-child(4) {
 .card div article{
     background-color: var(--grey);
 
+    padding: .4em;
     font-family: local-Roboto;
     color: white;
     font-size: .8em;
