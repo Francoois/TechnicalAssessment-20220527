@@ -34,7 +34,7 @@ h1{
 html{
     --light-grey:#FFF8;
     --lighter-grey:rgb(230,230,230,.8);
-    --grey:#0003;
+    --grey:#0008;
 }
 
 @font-face {
@@ -211,19 +211,21 @@ nav ul li span:nth-child(4) {
     padding: .4em;
 }
 
-.card:first-child{
+.card.selected{
     background-color: var(--light-grey);
     flex-basis: 65%;
     flex-grow: 2;
 }
-.card:first-child h1{
+.card.selected h1{
     background-color: var(--lighter-grey);
     color: black;
     font-size: 2em;
+    padding: .3em 0 0 .3em;
+    vertical-align: center;
 }
 .card h1{
     background-color: #000A;
-    padding: .4em;
+    padding: .4em 0 0 .4em;
     color: white;
     font-size: 1.2em;
     height: 20%;
@@ -245,7 +247,7 @@ nav ul li span:nth-child(4) {
     align-items: flex-end;
 }
 
-.card:first-child div article{
+.card.selected div article{
     width: 50%;
     padding-right: 5%;
 }

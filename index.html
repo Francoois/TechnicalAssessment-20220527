@@ -43,7 +43,7 @@
             </ul>
         </nav>
         <ul id="card-list">
-            <li class="card">
+            <li class="card selected">
                 <h1>LOREM UPSUM</h1>
                 <div style="background-image: url('Resources/Tile_image_1.png')">
                     <article>
@@ -103,25 +103,35 @@
 <script>
     'use strict';
 
+    /**
+     * Loading Effect
+     */
     setTimeout(()=>{
         document.getElementsByClassName("loading")[0].classList.toggle("loading");
         document.getElementById("loader").style.display="none";
         document.getElementById("main").style.display="flex";
-    },3000);
+    },0);
 
+    /**
+     * Buttons toggling
+     */
     setOnClick(document.getElementById('pages').children);
     setOnClick(document.getElementById('sub-pages').children);
-
     function setOnClick(clickables){
+        function toggleSelect(){
+            this.classList.toggle("selected");
+            console.log("Toggle"+JSON.stringify(this));
+        }
         for(let clickable of clickables){
             clickable.onclick= toggleSelect;//.bind(clickable);
         }
     }
 
-    function toggleSelect(){
-        this.classList.toggle("selected");
-        console.log("Toggle"+JSON.stringify(this));
-    }
+    /**
+     * Cards toggling
+     */
+
+
 </script>
 </body>
 </html>
