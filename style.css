@@ -82,8 +82,54 @@ nav>ul {
 
 #menu-area{
     height: 86%;
+    display: flex;
+    flex-flow: row wrap;
 }
 
-* {
-    border:1px solid red;
+.card {
+    height: 47%;
+    border: solid 1px white;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5em;
 }
+.card:nth-child(1){
+    background-color: #FFF4;
+}
+.card:nth-child(1) h1{
+    background-color: rgb(230,230,230,.8);
+    padding: .15em;
+}
+.card h1{
+    background-color: #000D;
+    padding: .15em;
+    color: white;
+}
+.card div{
+    background-image: url("Resources/Tile_image_1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    /*justify-content: flex-end;*/
+    align-items: flex-end;
+}
+
+.card div article{
+    height: 50%;
+    width: 40%;
+    background-color: #0003;
+
+    font-family: local-Roboto-Regular;
+    color: white;
+    font-size: .8em;
+
+    padding-right: 5%;
+
+}
+
+/** {*/
+/*    border:1px solid red;*/
+/*}*/
