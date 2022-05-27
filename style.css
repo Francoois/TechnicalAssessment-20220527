@@ -31,6 +31,12 @@ h1{
     
 }
 
+html{
+    --light-grey:#FFF8;
+    --lighter-grey:rgb(230,230,230,.8);
+    --grey:#0003;
+}
+
 @font-face {
     font-family: 'local-Roboto';
     src: url("Resources/Fonts/Roboto-Regular.ttf");
@@ -92,9 +98,12 @@ nav>ul {
 #sub-pages li.selected{
     flex-grow: 2;
 }
+
+
+
 #pages li.selected,
 #sub-pages li.selected{
-    background-color: #FFF8;
+    background-color: var(--light-grey);
     color: black;
     font-family: local-Roboto;
     font-weight: bold;
@@ -171,11 +180,6 @@ nav ul li span:nth-child(4) {
     /*width: 12%;*/
 }
 
-/*#pages li:hover,*/
-/*#sub-pages li:hover{*/
-/*    !*background-color: aqua;*!*/
-/*}*/
-
 /*
         Page List
  */
@@ -208,17 +212,17 @@ nav ul li span:nth-child(4) {
 }
 
 .card:first-child{
-    background-color: #FFF4;
+    background-color: var(--light-grey);
     flex-basis: 65%;
     flex-grow: 2;
 }
 .card:first-child h1{
-    background-color: rgb(230,230,230,.8);
+    background-color: var(--lighter-grey);
     color: black;
     font-size: 2em;
 }
 .card h1{
-    background-color: #000D;
+    background-color: #000A;
     padding: .4em;
     color: white;
     font-size: 1.2em;
@@ -247,7 +251,7 @@ nav ul li span:nth-child(4) {
 }
 
 .card div article{
-    background-color: #0003;
+    background-color: var(--grey);
 
     font-family: local-Roboto;
     color: white;
@@ -263,6 +267,9 @@ nav ul li span:nth-child(4) {
     width: 100px;
     height: 100px;
     border-radius: 100px;
+    /*border-top: 5px solid rgb(1,120,220);*/
+    /*border-left: 3px solid rgb(1,150,230);*/
+    /*border-bottom: 1px solid white;*/
     border-top: 5px solid rgb(1,120,220);
     border-left: 3px solid rgb(1,150,230);
     border-bottom: 1px solid white;
@@ -273,8 +280,6 @@ nav ul li span:nth-child(4) {
     0%{
         transform: rotate(0deg);
     }
-
-
     100%{
         transform: rotate(360deg);
     }
